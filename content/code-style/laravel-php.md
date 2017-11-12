@@ -1,7 +1,10 @@
-# Laravel Style Guide
+# Laravel & PHP Style Guide
 
 - [About Laravel](#about-laravel)
 - [General PHP Rules](#general-php-rules)
+- [Docblocks](#docblocks)
+- [Ternary operators](#ternary-operators)
+- [Comments](#comments)
 - [Configuration](#configuration)
 - [Artisan commands](#artisan-commands)
 - [Routing](#routing)
@@ -10,7 +13,7 @@
 - [Validation](#validation)
 - [Blade Templates](#blade-templates)
 - [Authorization](#authorization)
-- [Comments](#comments)
+- [Translations](#translations)
 
 ## About Laravel
 
@@ -19,6 +22,157 @@ First and foremost, Laravel provides the most value when you write things the wa
 ## General PHP Rules
 
 Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/). Generally speaking, everything string-like that's not public-facing should use camelCase. Detailed examples on these are spread throughout the guide in their relevant sections.
+
+## Docblocks
+
+Don't use docblocks for methods that can be fully type hinted (unless you need a description).
+
+Only add a description when it provides more context than the method signature itself. Use full sentences for descriptions, including a period at the end.
+
+```php
+// Good
+class Url
+{
+    public static function fromString(string $url): Url
+    {
+        // ...
+    }
+}
+
+// Bad: The description is redundant, and the method is fully type-hinted.
+class Url
+{
+    /**
+     * Create a url from a string.
+     * 
+     * @param string $url
+     * 
+     * @return \Spatie\Url\Url
+     */
+    public static function fromString(string $url): Url
+    {
+        // ...
+    }
+}
+```
+
+Always use fully qualified class names in docblocks.
+
+```php
+// Good
+
+/**
+ * @param string $url
+ *
+ * @return \Spatie\Url\Url
+ */
+
+// Bad
+
+/**
+ * @param string $foo
+ *
+ * @return Url
+ */
+```
+
+## Ternary operators
+
+Every portion of a ternary expression should be on it's own line unless it's a really short expression.
+
+```php
+// Good
+$result = $object instanceof Model
+    ? $object->name
+    : 'A default value';
+
+$name = $isFoo ? 'foo' : 'bar';
+
+// Bad
+$result = $object instanceof Model ?
+    $object->name : 
+   'A default value';
+```
+
+## Comments
+
+Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment format it like this:
+
+```php
+// There should be space before a single line comment.
+
+/*
+ * If you need to explain a lot you can use a comment block. Notice the
+ * single * on the first line. Comment blocks don't need to be three
+ * lines long or three characters shorter than the previous line.
+ */
+```
+
+## Whitespace
+
+Statements should have to breathe. In general always add blank lines between statements, unless they're a sequence of single-line equivalent operations. This isn't something enforcable, it's a matter of what looks best in it's context.
+
+```php
+// Good
+public function getPage($url)
+{
+    $page = $this->pages()->where('slug', $url)->first();
+
+    if (! $page) {
+        return null;
+    }
+
+    if ($page['private'] && ! Auth::check()) {
+        return null;
+    }
+
+    return $page;
+}
+
+// Bad: Everything's cramped together.
+public function getPage($url)
+{
+    $page = $this->pages()->where('slug', $url)->first();
+    if (! $page) {
+        return null;
+    }
+    if ($page['private'] && ! Auth::check()) {
+        return null;
+    }
+    return $page;
+}
+```
+
+```php
+// Good: A sequence of single-line equivalent operations.
+public function up()
+{
+    Schema::create('users', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('name');
+        $table->string('email')->unique();
+        $table->string('password');
+        $table->rememberToken();
+        $table->timestamps();
+    });
+}
+```
+
+Don't add any extra empty lines between `{}` brackets.
+
+```php
+// Good
+if ($foo) {
+    $this->foo = $foo;
+}
+
+// Bad
+if ($foo) {
+
+    $this->foo = $foo;
+
+}
+```
 
 ## Configuration
 
@@ -87,6 +241,18 @@ Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 </a>
 ```
 
+All routes have an http verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readble. Any other route options should come after it.
+
+```php
+// good: all http verbs come first
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('open-source', 'OpenSourceController@index')->middleware('openSource');
+
+// bad: http verbs not easily scannable
+Route::name('home')->get('/', 'HomeController@index');
+Route::middleware('openSource')->get('OpenSourceController@index');
+```
+
 ## Controllers
 
 Controllers that control a resource must use the plural resource name.
@@ -119,7 +285,7 @@ class PostsController
         return response(null, 200);
     }
 
-    public function unfavorite()
+    public function unfavorite(Post $post)
     {
         request()->user()->favorites()->detach($post);
         
@@ -140,7 +306,7 @@ class FavoritePostsController
         return response(null, 200);
     }
 
-    public function destroy()
+    public function destroy(Post $post)
     {
         request()->user()->favorites()->detach($post);
         
@@ -218,16 +384,12 @@ Gate::define('editPost', function ($user, $post) {
 
 Try to name abilities using default CRUD words. One exception: replace `show` with `view`. A server shows a resource, a user views it.
 
-## Comments
+## Translations
 
-Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment format it like this:
+Translations must be rendered with the `__` function. We prefer using this over `@lang` in Blade views because `__` can be used in both Blade views and regular PHP code. Here's an example:
 
 ```php
-// There should be space before a single line comment.
+<h2>{{ __('newsletter.form.title') }}</h2>
 
-/*
- * If you need to explain a lot you can use a comment block. Notice the
- * single * on the first line. Comment blocks don't need to be three
- * lines long or three characters shorter than the previous line.
- */
+{!! __('newsletter.form.description') !!}
 ```
