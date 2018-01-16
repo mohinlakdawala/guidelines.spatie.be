@@ -4,7 +4,10 @@
     --triple-baseline: calc(var(--baseline) * 3);
     --half-baseline: calc(var(--baseline) / 2);
 
-    --sidebar-width: 30vw;
+    --font-family: 'Source Sans Pro', -apple-system, "Segoe UI", sans-serif;
+    --heading-font-family: 'Source Sans Pro', -apple-system, "Segoe UI", sans-serif;
+
+    --sidebar-width: 20vw;
     --container-width: 760px;
     --z-sidebar: 5;
     --z-max: 10;
@@ -14,6 +17,8 @@
     --link-color: #22a4c9;
     --blue-border-color: #e8f6fa;
     --light-background-color: #f5fafb;
+    --dark-background-color: #282c34;
+    --text-color-for-dark-background: #abb2bf;
     --code-color: #48595d;
     --gray: #cbcfd0;
     --gold: #ebddc0;

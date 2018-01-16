@@ -1,6 +1,9 @@
 title: Code Style
 weight: 2
 items:
-  - Laravel & PHP
+  - Code editors
+  - General PHP
+  - Laravel
+  - HTML and Blade
   - CSS
   - JavaScript

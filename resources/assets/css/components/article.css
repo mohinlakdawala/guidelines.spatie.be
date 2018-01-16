@@ -119,6 +119,10 @@
     color: var(--link-color);
 }
 
+.article img {
+    max-width: 100%;
+}
+
 .article strong {
     font-weight: bold;
     color: color(var(--text-color) lightness(15%));
@@ -128,15 +132,26 @@
     font-style: italic;
 }
 
+.article blockquote {
+    background: var(--dark-background-color);
+    color: var(--text-color-for-dark-background);
+    padding: 1em;
+    font-style: italic;
+}
+
+.article blockquote > p {
+    margin-bottom: 0;
+}
+
 .article pre {
     padding: var(--half-baseline) 2em;
     border-top: 1px solid var(--blue-border-color);
     border-bottom: 1px solid var(--blue-border-color);
     margin: calc(var(--baseline) - 1px) -.3em;
-    font-family: Menlo, "Courier New", Courier, monospace;
+    font-family: Menlo, "Consolas", "Courier New", Courier, monospace;
     font-size: .8em;
-    background-color: var(--light-background-color);
-    color: var(--code-color);
+    background-color: var(--dark-background-color);
+    color: var(--text-color-for-dark-background);
     overflow: auto;
 }
 

@@ -1,5 +1,7 @@
 .waves {
-    background-image: url('../images/waves.jpg');
+	background-image: linear-gradient(-225deg, #00537E 0%, #3AA17E 100%);
+    /*background-image: url('../images/bg.jpeg');*/
+    /*box-shadow: inset 0 0 0 1000px rgba(36, 70, 105, 0.74);*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left top;

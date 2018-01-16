@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', -apple-system, "Segoe UI", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', -apple-system, "Segoe UI", sans-serif;
+	letter-spacing: -1px;
+}
+
+.article img {
+	max-width: 100%;
+}
+
+.menu--sidebar .menu__subtitle {
+	font-family: 'Montserrat', -apple-system, "Segoe UI", sans-serif;
+	letter-spacing: -1px;
+	font-size: 1.2em;
+}
+
+.waves {
+    background-image: url('/images/bg.jpeg');
+    box-shadow: inset 0 0 0 1000px rgba(36, 70, 105, 0.74);
+}

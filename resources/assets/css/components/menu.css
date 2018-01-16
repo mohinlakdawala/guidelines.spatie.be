@@ -51,14 +51,18 @@
 }
 
 .menu--sidebar .menu__subtitle {
-    padding: 0 .5em;
+    font-family: var(--heading-font-family);
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    /*padding: 0 .5em;*/
     margin-right: -.1em;
     margin-left: -.1em;
+    margin-bottom: -.1em;
     border-radius: 2px;
     top: -.2em;
     line-height: var(--baseline);
-    color: white;
-    background-color: rgba(0, 0, 0, .075);
+    color: wheat;
+    /*background-color: rgba(0, 0, 0, .075);*/
 }
 
 .menu--sidebar .menu__section {

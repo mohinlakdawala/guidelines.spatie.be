@@ -10,7 +10,7 @@
     height: 100vh;
     width: var(--sidebar-width);
     color: white;
-    text-align: right;
+    /*text-align: right;*/
     padding: var(--double-baseline) var(--double-baseline) var(--baseline);
 }
 

@@ -1,18 +1,18 @@
 # Version Control
 
-All our projects use Git, mostly with a repository hosted on GitHub. Since we're a small team, and most projects have less than 3 people working on it simultaneously, we have pretty loose Git guidelines since we rarely bump into conflicts.
+All the projects use Git with a repository hosted on GitHub.
 
 ## Repo naming conventions
 
 If the repo contains the source code of the a site its name should be the main naked domain name of that site. It should be lowercased.
 
-- Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
-- Good: `spatie.be`
+- Bad: `https://www.fleetmastr.com`, `www.fleetmastr.com`, `Fleetmastr.com`
+- Good: `fleetmastr.com`
 
 Sites that are hosted on a subdomain may use that subdomain in their name
 
-- Bad: `spatie.be-guidelines`
-- Good: `guidelines.spatie.be`
+- Bad: `aecordigital.com-fleetmastr`
+- Good: `fleetmastr.aecordigital.com`
 
 If the repo concerns something else, for example a package, its name should be kebab-cased.
 
@@ -40,7 +40,7 @@ There's no strict ruling on feature branch names, just make sure it's clear enou
 
 ### Pull requests
 
-Merging branches via GitHub pull requests isn't a requirement, but can be useful if:
+Merging branches via GitHub pull requests is mandatory so that it is useful when:
 
 - You want a peer to review your changes
 - You want to ensure your branch can be merged and commits can be squashed via an interface

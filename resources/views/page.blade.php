@@ -4,8 +4,9 @@
     <section class="sidebar waves">
         <nav class="sidebar__contents">
             <div class="sidebar__logo">
-                <a href="https://spatie.be" target="spatie">
-                    @include('svg.logo')
+                <a href="https://aecordigital.com" target="aecordigital" 
+                    style="font-weight: bold; letter-spacing: -1px; font-size: 3em;">
+                    aecor
                 </a>
             </div>
             <div class="sidebar__home">
@@ -22,8 +23,8 @@
                     </button>
                 </form>
             @endauth
-            <a href="https://spatie.be" target="spatie">
-                © spatie.be, Antwerp
+            <a href="https://aecordigital.com" target="aecor">
+                © aecor
             </a>
         </footer>
     </section>
