@@ -9,9 +9,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @isset($title)
-        <title>{{ $title }} | aecor coding guidelines</title>
+        <title>{{ $title }} | aecor developer handbook</title>
     @else
-        <title>aecor coding guidelines</title>
+        <title>aecor developer handbook</title>
     @endif
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

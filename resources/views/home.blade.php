@@ -9,7 +9,7 @@
                     </a>
                 </div>
                 <h1 class="home__title">
-                    coding guidelines 💻
+                    developer handbook
                 </h1>
             </div>
         </header>
@@ -20,9 +20,9 @@
             <p>
                 The contents of this site exist for ourselves—more importantly, our future selves—and for giving future collegues a reference to our way of doing things and their quirks. The guidelines cover workflow, code style, and other little things we consider worth documenting.
             </p>
-            <p>
+            {{-- <p>
                 All pages are hosted on <a href="https://github.com/mohinlakdawala/guidelines.spatie.be" target="aecordigital">GitHub</a>, so edits and improvements are welcome. Note that these are our own opinionated ideas, so we'll be finicky when it comes to substantial changes.
-            </p>
+            </p> --}}
         </section>
         <nav class="home__index">
             <div class="home__index__inner">

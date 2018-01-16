@@ -15,3 +15,6 @@ The following section lists all the essential courses/tutorials that one should 
 ### Vue 
 1. [https://laracasts.com/series/learn-vue-2-step-by-step](https://laracasts.com/series/learn-vue-2-step-by-step)
 1. [https://www.youtube.com/watch?v=2CSr2vBApSI&list=PL55RiY5tL51pT0DNJraU93FhMzhXxtDAo](https://www.youtube.com/watch?v=2CSr2vBApSI&list=PL55RiY5tL51pT0DNJraU93FhMzhXxtDAo)
+
+### CSS
+1. [http://getbootstrap.com/](http://getbootstrap.com/)

@@ -59,7 +59,8 @@ a {
 }
 
 *, *:before, *:after {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 body {
@@ -85,6 +86,11 @@ h1, h2, h3, h4, h5, h6 {
     .-mobile-sidebar-visible body {
         overflow: hidden;
     }
+}
+
+::-moz-selection {
+    color: white;
+    background-color: #007696;
 }
 
 ::selection {
@@ -297,8 +303,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
     min-height: 100vh;
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .error--404 {
@@ -462,13 +472,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu--home {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .menu--home .menu__section {
-    flex-basis: calc(50% - 28px / 2);
+    -ms-flex-preferred-size: calc(50% - 28px / 2);
+        flex-basis: calc(50% - 28px / 2);
     margin-right: 28px;
     margin-bottom: 28px;
     padding: 22px 28px 28px;
@@ -522,7 +538,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 800px) {
     .menu--home .menu__section {
-        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
         margin-right: 0;
     }
 }
@@ -532,9 +549,16 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     z-index: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     overflow: auto;
     height: 100vh;
     width: 20vw;
@@ -585,20 +609,31 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     cursor: pointer;
     font-size: 25px;
-    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
 }
 
 .sidebar__auth:hover {
-    animation: wave .25s;
-    animation-iteration-count: 2;
-    animation-timing-function: ease-in-out;
+    -webkit-animation: wave .25s;
+            animation: wave .25s;
+    -webkit-animation-iteration-count: 2;
+            animation-iteration-count: 2;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes wave {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    37.5% { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
+    87.5% { -webkit-transform: rotate(5deg); transform: rotate(5deg); }
+    100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
 }
 
 @keyframes wave {
-    0% { transform: rotate(0deg); }
-    37.5% { transform: rotate(-15deg); }
-    87.5% { transform: rotate(5deg); }
-    100% { transform: rotate(0deg); }
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    37.5% { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
+    87.5% { -webkit-transform: rotate(5deg); transform: rotate(5deg); }
+    100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
 }
 
 .sidebar__toggler {
@@ -615,14 +650,20 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     padding: .4em .5em .3em;
     border-radius: 2px;
-    box-shadow: 3px 3px 0 rgba(0, 118, 150, .4);
-    transform: translateX(-50%) translateY(0);
+    -webkit-box-shadow: 3px 3px 0 rgba(0, 118, 150, .4);
+            box-shadow: 3px 3px 0 rgba(0, 118, 150, .4);
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+    -webkit-transition: -webkit-transform .2s ease-out;
+    transition: -webkit-transform .2s ease-out;
     transition: transform .2s ease-out;
+    transition: transform .2s ease-out, -webkit-transform .2s ease-out;
     will-change: transform;
 }
 
 .-sidebar-toggler-hidden .sidebar__toggler {
-    transform: translateX(-50%) translateY(calc(100% + 50px));
+    -webkit-transform: translateX(-50%) translateY(calc(100% + 50px));
+            transform: translateX(-50%) translateY(calc(100% + 50px));
 }
 
 .sidebar__toggler:before {
@@ -647,16 +688,19 @@ h1, h2, h3, h4, h5, h6 {
     .sidebar {
         width: 100%;
         text-align: left;
-        transform: translateX(100vw);
+        -webkit-transform: translateX(100vw);
+                transform: translateX(100vw);
         opacity: .8;
         padding: 56px 56px 28px;
+        -webkit-transition: all .15s ease-out;
         transition: all .15s ease-out;
         will-change: transform, opacity;
     }
 
     .-mobile-sidebar-visible .sidebar {
         opacity: 1;
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 }
 
