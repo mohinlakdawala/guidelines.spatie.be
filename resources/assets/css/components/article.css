@@ -157,10 +157,10 @@
 
 .article code {
     display: inline-block;
-    background-color: #f5fafb;
+    background-color: #ECF1FF;
     font-family: Menlo, "Courier New", Courier, monospace;
     font-size: .8em;
-    border: 1px solid #ecf1f3;
+    border: 1px solid #DDE7FF;
     border-radius: 2px;
     padding: .25em;
     line-height: 1;

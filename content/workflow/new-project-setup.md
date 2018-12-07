@@ -4,7 +4,7 @@
 
 If you're creating a [Laravel](https://laravel.com) application that requires a backend, you should look into using the [aecor starter repository](https://github.com/hardikaecor/aecor-laravel-starter) as the base of your project. First clone its main repository and remove the `.git` folder. This will be the base application for your new project.
 
-Create a repository on the on GitHub using the [repo naming rules](https://guidelines.spatie.be/workflow/version-control#repo-naming-conventions).
+Create a repository on the on GitHub using the [repo naming rules](/workflow/version-control#repo-naming-conventions).
 
 Example: `hardikaecor/fleetmastr.com`
 

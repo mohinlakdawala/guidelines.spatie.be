@@ -16,7 +16,7 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> --}}
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>

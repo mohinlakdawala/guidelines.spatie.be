@@ -4,26 +4,26 @@
     --triple-baseline: calc(var(--baseline) * 3);
     --half-baseline: calc(var(--baseline) / 2);
 
-    --font-family: 'Source Sans Pro', -apple-system, "Segoe UI", sans-serif;
-    --heading-font-family: 'Source Sans Pro', -apple-system, "Segoe UI", sans-serif;
+    --font-family: 'Lato', -apple-system, "Segoe UI", sans-serif;
+    --heading-font-family: 'Lato', -apple-system, "Segoe UI", sans-serif;
 
     --sidebar-width: 20vw;
     --container-width: 760px;
     --z-sidebar: 5;
     --z-max: 10;
 
-    --text-color: #3e4657;
+    --text-color: #1D3571;
     --blue: #007696;
-    --link-color: #22a4c9;
-    --blue-border-color: #e8f6fa;
-    --light-background-color: #f5fafb;
-    --dark-background-color: #282c34;
+    --link-color: #3F64C4;
+    --blue-border-color: #BCCFFF;
+    --light-background-color: #BCCFFF;
+    --dark-background-color: #030E2C;
     --text-color-for-dark-background: #abb2bf;
-    --code-color: #48595d;
+    --code-color: #1D3571;
     --gray: #cbcfd0;
     --gold: #ebddc0;
-    --broken-white: #fffcf8;
-    --broken-gray: #ede8e0;
+    --broken-white: #ECF1FF;
+    --broken-gray: #DDE7FF;
     --red: #cc430b;
     --almost-white: #e1eff3;
     --subtle-blue: #f4f7f7;

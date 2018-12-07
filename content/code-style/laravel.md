@@ -214,8 +214,6 @@ class FavoritePostsController
 }
 ```
 
-This is a loose guideline that doesn't need to be enforced.
-
 ## Views
 
 View files must use camelCase.

@@ -31,12 +31,11 @@ Feature branches are optional, if you'd like to create a feature branch, make su
 
 ### Live projects
 
-Once a project goes live, the `develop` branch gets deleted. All future commits to `master` must be added through a feature branch. In most cases, it's preferred to squash your commits on merge.
+Once a project goes live, the `develop` branch gets deleted. All future tickets for the project will have a sprint number associated with them. The changes for these tickets should be committed on their respective sprint branches. Once the sprint is done and changes are to be made live, the corresponding sprint branch should be deployed on the `master` branch.
 
-There's no strict ruling on feature branch names, just make sure it's clear enough to know what they're for. Branches may only contain lowercase letters and hyphens.
+When multiple sprints are being developed in parallel, do make sure to keep the later sprint branches updated with the prior sprint branches.
 
-- Bad: `feature/mailchimp`, `random-things`, `develop`
-- Good: `feature-mailchimp`, `fix-deliverycosts` or `updates-june-2016`
+For example, if sprint 2.4, 2.5 and 2.6 are being developed at the same time then `sprint-2.6` should be kept up-to-date with the changes from `sprint-2.5` and `sprint-2.4` branches. Likewise, `sprint-2.5` should be kept up-to-date with changes from `sprint-2.4` branch.
 
 ### Pull requests
 
